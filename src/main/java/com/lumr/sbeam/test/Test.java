@@ -58,6 +58,7 @@ public class Test {
     private class UserChange implements Runnable{
         @Override
         public void run() {
+            // TODO 修复并发错误
             UserDao dao = (UserDao)getDao("userDao");
             User user = dao.getUser(new User(2));
             if (user.getMoney()>9000)
